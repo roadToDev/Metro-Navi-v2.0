@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA391C271EEFEE4C00064386 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA391C261EEFEE4C00064386 /* SearchViewController.swift */; };
 		FA7F2E021EEFBCE7000F438E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7F2E011EEFBCE7000F438E /* AppDelegate.swift */; };
 		FA7F2E041EEFBCE7000F438E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7F2E031EEFBCE7000F438E /* ViewController.swift */; };
 		FA7F2E071EEFBCE7000F438E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA7F2E051EEFBCE7000F438E /* Main.storyboard */; };
 		FA7F2E091EEFBCE7000F438E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA7F2E081EEFBCE7000F438E /* Assets.xcassets */; };
 		FA7F2E0C1EEFBCE7000F438E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA7F2E0A1EEFBCE7000F438E /* LaunchScreen.storyboard */; };
 		FA7F2E171EEFBCE7000F438E /* Metro_Navigator_v2_0Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7F2E161EEFBCE7000F438E /* Metro_Navigator_v2_0Tests.swift */; };
+		FAB42AF51EF1314D0094940F /* StationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB42AF41EF1314D0094940F /* StationsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA391C261EEFEE4C00064386 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		FA7F2DFE1EEFBCE7000F438E /* Metro Navigator v2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Metro Navigator v2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA7F2E011EEFBCE7000F438E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA7F2E031EEFBCE7000F438E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +39,7 @@
 		FA7F2E121EEFBCE7000F438E /* Metro Navigator v2.0Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Metro Navigator v2.0Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA7F2E161EEFBCE7000F438E /* Metro_Navigator_v2_0Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metro_Navigator_v2_0Tests.swift; sourceTree = "<group>"; };
 		FA7F2E181EEFBCE7000F438E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAB42AF41EF1314D0094940F /* StationsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +83,9 @@
 			children = (
 				FA7F2E011EEFBCE7000F438E /* AppDelegate.swift */,
 				FA7F2E031EEFBCE7000F438E /* ViewController.swift */,
+				FAB42AF41EF1314D0094940F /* StationsTableViewCell.swift */,
 				FA7F2E051EEFBCE7000F438E /* Main.storyboard */,
+				FA391C261EEFEE4C00064386 /* SearchViewController.swift */,
 				FA7F2E081EEFBCE7000F438E /* Assets.xcassets */,
 				FA7F2E0A1EEFBCE7000F438E /* LaunchScreen.storyboard */,
 				FA7F2E0D1EEFBCE7000F438E /* Info.plist */,
@@ -201,7 +207,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA391C271EEFEE4C00064386 /* SearchViewController.swift in Sources */,
 				FA7F2E041EEFBCE7000F438E /* ViewController.swift in Sources */,
+				FAB42AF51EF1314D0094940F /* StationsTableViewCell.swift in Sources */,
 				FA7F2E021EEFBCE7000F438E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,6 +420,7 @@
 				FA7F2E1D1EEFBCE7000F438E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FA7F2E1E1EEFBCE7000F438E /* Build configuration list for PBXNativeTarget "Metro Navigator v2.0Tests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +429,7 @@
 				FA7F2E201EEFBCE7000F438E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
