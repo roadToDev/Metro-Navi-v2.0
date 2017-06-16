@@ -1,7 +1,8 @@
 import UIKit
 
-class StationsTableViewCell: UITableViewCell {
+class StationsCollectionViewCell: UICollectionViewCell {
+    
     
     @IBOutlet weak var stationName: UILabel!
     
-    }
+}

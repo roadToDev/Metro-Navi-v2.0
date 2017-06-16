@@ -14,7 +14,9 @@
 		FA7F2E091EEFBCE7000F438E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA7F2E081EEFBCE7000F438E /* Assets.xcassets */; };
 		FA7F2E0C1EEFBCE7000F438E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA7F2E0A1EEFBCE7000F438E /* LaunchScreen.storyboard */; };
 		FA7F2E171EEFBCE7000F438E /* Metro_Navigator_v2_0Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7F2E161EEFBCE7000F438E /* Metro_Navigator_v2_0Tests.swift */; };
-		FAB42AF51EF1314D0094940F /* StationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB42AF41EF1314D0094940F /* StationsTableViewCell.swift */; };
+		FAB42AF71EF141680094940F /* StationsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB42AF61EF141680094940F /* StationsCollectionViewCell.swift */; };
+		FAB42AF91EF3FC400094940F /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB42AF81EF3FC400094940F /* Station.swift */; };
+		FAB42AFB1EF3FD830094940F /* NavigatorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB42AFA1EF3FD830094940F /* NavigatorData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +41,9 @@
 		FA7F2E121EEFBCE7000F438E /* Metro Navigator v2.0Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Metro Navigator v2.0Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA7F2E161EEFBCE7000F438E /* Metro_Navigator_v2_0Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metro_Navigator_v2_0Tests.swift; sourceTree = "<group>"; };
 		FA7F2E181EEFBCE7000F438E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FAB42AF41EF1314D0094940F /* StationsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationsTableViewCell.swift; sourceTree = "<group>"; };
+		FAB42AF61EF141680094940F /* StationsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationsCollectionViewCell.swift; sourceTree = "<group>"; };
+		FAB42AF81EF3FC400094940F /* Station.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
+		FAB42AFA1EF3FD830094940F /* NavigatorData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigatorData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +87,10 @@
 			children = (
 				FA7F2E011EEFBCE7000F438E /* AppDelegate.swift */,
 				FA7F2E031EEFBCE7000F438E /* ViewController.swift */,
-				FAB42AF41EF1314D0094940F /* StationsTableViewCell.swift */,
+				FAB42AF61EF141680094940F /* StationsCollectionViewCell.swift */,
 				FA7F2E051EEFBCE7000F438E /* Main.storyboard */,
+				FAB42AF81EF3FC400094940F /* Station.swift */,
+				FAB42AFA1EF3FD830094940F /* NavigatorData.swift */,
 				FA391C261EEFEE4C00064386 /* SearchViewController.swift */,
 				FA7F2E081EEFBCE7000F438E /* Assets.xcassets */,
 				FA7F2E0A1EEFBCE7000F438E /* LaunchScreen.storyboard */,
@@ -208,8 +214,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA391C271EEFEE4C00064386 /* SearchViewController.swift in Sources */,
+				FAB42AF91EF3FC400094940F /* Station.swift in Sources */,
 				FA7F2E041EEFBCE7000F438E /* ViewController.swift in Sources */,
-				FAB42AF51EF1314D0094940F /* StationsTableViewCell.swift in Sources */,
+				FAB42AFB1EF3FD830094940F /* NavigatorData.swift in Sources */,
+				FAB42AF71EF141680094940F /* StationsCollectionViewCell.swift in Sources */,
 				FA7F2E021EEFBCE7000F438E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,35 +1,41 @@
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
 
-    @IBOutlet weak var stationsTableView: UITableView!
+    
+    @IBOutlet weak var stationsCollectionView: UICollectionView!
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.stationsTableView.dataSource = self
-        self.stationsTableView.delegate = self
+        self.stationsCollectionView.delegate = self
+        self.stationsCollectionView.dataSource = self
         
         view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "background"))
-        addLogoToTableViewBackground()
-        stationsTableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        addLogoToCollectionViewBackground()
         
         
     }
 
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 30
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! StationsTableViewCell
-        cell.backgroundColor = .clear
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "coll_cell", for: indexPath) as! StationsCollectionViewCell
+        
         cell.stationName.text = "Політехнічний Інститут"
-        cell.backgroundColor = UIColor(colorLiteralRed: 47/255, green: 226/255, blue: 191/255, alpha: 0.9)
         
         return cell
+        
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+    {
+        return CGSize(width: stationsCollectionView.frame.width, height: 33)
     }
     
     
@@ -43,10 +49,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
-    private func addLogoToTableViewBackground() {
+    private func addLogoToCollectionViewBackground() {
         let logoImageView = UIImageView(image: #imageLiteral(resourceName: "logo"))
         logoImageView.contentMode = .scaleAspectFit
-        stationsTableView.backgroundView = logoImageView
+        stationsCollectionView.backgroundColor = UIColor(colorLiteralRed: 53/255, green: 73/255, blue: 93/255, alpha: 1.0)
+        stationsCollectionView.backgroundView = logoImageView
     }
     
 }
