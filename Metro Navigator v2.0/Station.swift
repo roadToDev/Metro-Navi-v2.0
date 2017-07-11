@@ -9,7 +9,7 @@
 import Foundation
 
 
-class Station {
+struct Station {
     
     var name: String
     var timeToNextStation: Int

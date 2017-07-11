@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Metro_Navigator_v2_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vc" id="BYZ-38-t0r" customClass="ViewController" customModule="Metro_Navigator_v2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -77,19 +77,22 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="BMY-c6-LRs">
                                                     <rect key="frame" x="10" y="0.0" width="268" height="33"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTj-tH-QvQ">
-                                                            <rect key="frame" x="0.0" y="0.0" width="32" height="33"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Політехнічний Інститут" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTj-tH-QvQ">
+                                                            <rect key="frame" x="0.0" y="0.0" width="139" height="33"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="139" id="ORQ-Uz-anW"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
-                                                            <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="textColor" red="0.27450980392156865" green="0.26666666666666666" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7:77 хв." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0N-ag-4dx">
-                                                            <rect key="frame" x="112" y="0.0" width="46.5" height="33"/>
+                                                            <rect key="frame" x="165.5" y="0.0" width="46.5" height="33"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
-                                                            <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="textColor" red="0.27450980392156865" green="0.26666666666666666" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="transfer" translatesAutoresizingMaskIntoConstraints="NO" id="MLH-XY-rKy">
+                                                        <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty" translatesAutoresizingMaskIntoConstraints="NO" id="MLH-XY-rKy">
                                                             <rect key="frame" x="238" y="0.0" width="30" height="33"/>
                                                         </imageView>
                                                     </subviews>
@@ -100,7 +103,6 @@
                                                 </stackView>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="BMY-c6-LRs" firstAttribute="centerX" secondItem="lpy-PO-wsD" secondAttribute="centerX" id="7Qg-Sk-e6q"/>
                                             <constraint firstAttribute="trailing" secondItem="BMY-c6-LRs" secondAttribute="trailing" constant="10" id="GLP-FH-hn7"/>
@@ -114,6 +116,8 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="stationName" destination="uTj-tH-QvQ" id="0qT-CI-9YU"/>
+                                            <outlet property="timeToNextStation" destination="P0N-ag-4dx" id="Gz4-PG-zIn"/>
+                                            <outlet property="transferImage" destination="MLH-XY-rKy" id="CJn-Qj-2NZ"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -138,13 +142,15 @@
                             <constraint firstItem="IkN-Be-VfA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ndU-MP-Pij"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="e2i-o2-G20"/>
                     <connections>
                         <outlet property="stationsCollectionView" destination="6Yu-L0-AaT" id="lvK-pu-Zu9"/>
+                        <outlet property="timeLabel" destination="IkN-Be-VfA" id="UOc-io-7fn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="114.375" y="122.53521126760563"/>
+            <point key="canvasLocation" x="165" y="124"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="OU4-Wi-xk2">
@@ -161,8 +167,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Mv-aG-Pbb">
                                 <rect key="frame" x="31.5" y="141" width="257" height="286"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nk3-Ng-J8i">
-                                        <rect key="frame" x="8" y="8" width="242" height="44"/>
+                                    <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Станція відправлення" translatesAutoresizingMaskIntoConstraints="NO" id="nk3-Ng-J8i">
+                                        <rect key="frame" x="8" y="8" width="243" height="44"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <color key="barTintColor" red="0.20784313725490194" green="0.28627450980392155" blue="0.36470588235294116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
@@ -171,8 +177,8 @@
                                             <string>Title</string>
                                         </scopeButtonTitles>
                                     </searchBar>
-                                    <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4y8-Zy-cvy">
-                                        <rect key="frame" x="8" y="52" width="242" height="44"/>
+                                    <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Станція прибуття" translatesAutoresizingMaskIntoConstraints="NO" id="4y8-Zy-cvy">
+                                        <rect key="frame" x="8" y="52" width="243" height="44"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <color key="barTintColor" red="0.20784313725490194" green="0.28627450980392155" blue="0.36470588235294116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -216,6 +222,7 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="searchWay:" destination="C2l-ak-AnH" eventType="touchUpInside" id="0Ad-IH-Rhr"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="segue" id="dgW-Pa-1uk"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -230,13 +237,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ueq-ah-ZU6">
-                                <rect key="frame" x="16" y="53" width="288" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -247,8 +247,6 @@
                     <connections>
                         <outlet property="arivalStation" destination="4y8-Zy-cvy" id="z3S-ii-7yU"/>
                         <outlet property="departureStation" destination="nk3-Ng-J8i" id="nBT-Fp-So9"/>
-                        <outlet property="firstSearchBar" destination="nk3-Ng-J8i" id="v4r-fC-WzR"/>
-                        <outlet property="secondSearchBar" destination="4y8-Zy-cvy" id="Gaq-fN-Ef7"/>
                         <outlet property="tableView" destination="Ggm-5b-s4p" id="v9E-0K-6kd"/>
                     </connections>
                 </viewController>
@@ -258,6 +256,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="transfer" width="30" height="30"/>
+        <image name="empty" width="30" height="30"/>
     </resources>
 </document>

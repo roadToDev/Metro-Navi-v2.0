@@ -1,17 +1,8 @@
-//
-//  SearchViewController.swift
-//  Metro Navigator v2.0
-//
-//  Created by Alex on 6/13/17.
-//  Copyright © 2017 Alex. All rights reserved.
-//
-
 import UIKit
 
 class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
-    @IBOutlet weak var firstSearchBar: UISearchBar!
-    @IBOutlet weak var secondSearchBar: UISearchBar!
+    
     @IBOutlet weak var tableView: UITableView!
     
     
@@ -26,6 +17,9 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        departureStation.returnKeyType = UIReturnKeyType.done
+        arivalStation.returnKeyType = UIReturnKeyType.done
+        
         self.tableView.dataSource = self
         self.tableView.delegate = self
         
@@ -37,7 +31,9 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     @IBAction func searchWay(_ sender: UIButton) {
-        self.removeAnimate()
+        if checkStations() {
+            self.removeAnimate()
+        }
     }
     
     
@@ -57,6 +53,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as UITableViewCell
+        
         cell.textLabel!.text = autoComplete[indexPath.row]
         
         return cell
@@ -88,6 +85,42 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.reloadData()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let searchViewController = segue.destination as! ViewController
+        let waySearcher = WaySearcher(departure: departureStation.text!, arrival: arivalStation.text!)
+        searchViewController.changeStation = waySearcher.getChangeStationsNames().firstChange
+        searchViewController.stations = waySearcher.getTheWay()
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if checkStations() {
+            return true
+        } else {
+            return false
+        }
+        
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+    }
+
+    func checkStations() -> Bool {
+        var flag = 0
+        for station in autoCompleteStations {
+            if station == arivalStation.text {
+                flag += 1
+            } else if station == departureStation.text {
+                flag += 1
+            }
+        }
+        if flag == 2 && arivalStation.text != departureStation.text {
+            return true
+        } else {
+            return false
+        }
+    }
+    
     ////////////// ANIMATION /////////////
     
     private func showAnimate() {
@@ -105,7 +138,9 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             self.view.alpha = 0.0
         }, completion: {(finished : Bool) in
             if(finished) {
+
                 self.view.removeFromSuperview()
+                
             }
             
         })
